@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+    centos_tomcat:
+        build: .
+        image: centos_tomcat
+        restart: unless-stopped
+        ports:
+            - "10000:22"
+            - "80:80"
+        volumes:
+          - ./php:/var/www/html
