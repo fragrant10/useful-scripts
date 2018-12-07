@@ -6,7 +6,7 @@
 # @github: https://github.com/fragrant10
 # @Create At: 2018-12-06 14:53:38
 # @Last Modified By: fragrant
-# @Last Modified At: 2018-12-07 16:18:44
+# @Last Modified At: 2018-12-07 16:52:29
 # @Description: url Collection of query_url ! Have Fun!
 
 import requests,sys,base64,re
@@ -72,8 +72,9 @@ def query_search(query, Cookie, filename, page = '1'):
     reqQuery = s.get(query, headers = headers, allow_redirects=False)
     soup = BeautifulSoup(reqQuery.content, 'html.parser')
     searchResult = soup.find_all(href=re.compile("^http"))
-    # 每次查询只有有10个结果 遍历写入filename文件里面
-    for i in range(10):
+    # print(searchResult)
+    # 每次查询只有有len(searchResult)-4个结果 遍历写入filename文件里面
+    for i in range(len(searchResult)-4):
         try:
             link = searchResult[i].get('href') + '\n'
             result_savetofile(filename,link)
@@ -97,8 +98,8 @@ if __name__ == '__main__':
         # print(query)
         page = '5'
         filename = 'fofa_result.txt'
-        username = 'email'
-        password = 'passwd'
+        username = '1433163771@qq.com'
+        password = 'uifW1EieFo*g'
         s = requests.Session()
         login_url = 'https://i.nosec.org/login?service=http://fofa.so/users/service'
         query_base64 = str(base64.b64encode(query.encode('utf-8')),'utf-8')
