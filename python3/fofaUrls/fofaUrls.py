@@ -6,7 +6,7 @@
 # @github: https://github.com/fragrant10
 # @Create At: 2018-12-06 14:53:38
 # @Last Modified By: fragrant
-# @Last Modified At: 2018-12-07 16:52:29
+# @Last Modified At: 2018-12-07 17:00:47
 # @Description: url Collection of query_url ! Have Fun!
 
 import requests,sys,base64,re
@@ -98,8 +98,8 @@ if __name__ == '__main__':
         # print(query)
         page = '5'
         filename = 'fofa_result.txt'
-        username = '1433163771@qq.com'
-        password = 'uifW1EieFo*g'
+        username = 'email'
+        password = 'passwd'
         s = requests.Session()
         login_url = 'https://i.nosec.org/login?service=http://fofa.so/users/service'
         query_base64 = str(base64.b64encode(query.encode('utf-8')),'utf-8')
