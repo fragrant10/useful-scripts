@@ -54,5 +54,3 @@ for k in range(1,99):
         except Exception as e:
             result += chr(int(str_pos))
             print('result: ' + result)
-
-
